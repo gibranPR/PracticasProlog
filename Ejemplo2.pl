@@ -15,3 +15,10 @@ for(Ini,Fin) :-
 dec_bin(0,'0').
 dec_bin(1,'1').
 dec_bin(N,B):-N>1,X is N mod 2,Y is N//2,dec_bin(Y,B1),atom_concat(B1, X, B).
+
+concatena([],L2,L2).
+concatena([H|L1],L2,[H|L3]) :- concatena(L1,L2,L3).
+
+reversa(L,R) :- reversa2(L,[],R).
+reversa2([],A,A) :- !.
+reversa2([H|T],A,R) :- reversa2(T,[H|A],R).
