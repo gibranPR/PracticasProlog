@@ -1,0 +1,11 @@
+%2. Generar un número aleatorio entero de 1 a 1000 (random)
+%   y deberá interactuar con el usuario para que éste lo
+%   adivine, deberá indicar al usuario si ya lo encontró
+%   o si el numero es mayor o menor al numero aleatorio.
+juego :- random(1,1000,X), demas(X,0).
+demas(X,I) :- writeln('Adivina el número que pensé: '), read(Y),
+	      generaRandom(Y,X,I).
+generaRandom(Y,X,I) :- I1 is I+1,
+		      (X == Y -> writeln('Le atinaste.\tIntentos:'), write(I1);
+		      X<Y -> writeln('Mas abajo.\n\n'), demas(X,I1);
+		      writeln('Más arriba.\n\n'),demas(X,I1)).

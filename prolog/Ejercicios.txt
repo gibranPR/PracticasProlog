@@ -1,0 +1,42 @@
+%1. Leer un archivo de datos que contenga una
+%   lista de palabras (una palabra por renglon), las
+%   ordene alfabeticamente (no usar predicados predefinidos
+%   para el ordenamiento) y que genere otro archivo con las
+%   palabras ordenadas. Deberá usar un nombre de archivo
+%   como parametro de entrada y otro nombre de archivo
+%   como parametro de salida.
+%%      ojo. verificar argumentos. Var nonvar, integer noninteger, etc...
+%	openread, openwrite
+
+
+%2. Generar un número aleatorio entero de 1 a 1000 (random)
+%   y deberá interactuar con el usuario para que éste lo
+%   adivine, deberá indicar al usuario si ya lo encontró
+%   o si el numero es mayor o menor al numero aleatorio.
+
+%3. tenemos el siguiente conocimiento directo;
+Pedro padece gripe
+Pedro padece hepatitis
+Juan padece hepatitis
+Maria padece gripe
+Carlos padece intoxicacion
+Fiebre es sintoma de gripe	sintomade(fiebre,gripe)
+Cansancio es sintoma de hepatitis
+Diarrea es sintoma de intoxicacion
+Cansancio es sintoma de gripe
+Aspirina suprime la fiebre
+Lomotil suprime la diarrea
+
+Además podemos aportar el siguiente conocimiento inferido:
+
+Un farmaco alivia una enfermedad si la enfermedad tiene un sintoma que sea suprimido por el farmaco
+
+Una persona debería tomar un farmaco si padece una enfermedad que sea aliviada por el farmaco
+
+1: podemos conocer que dolencia tiene Pedro? y maria?
+2: quien padece gripe?
+3: que sintomas tiene Pedro?
+4: quien padece diarrea?
+5: quien esta cansado?
+6: hay algun farmaco que alivie a Pedro?
+7: Hay algun sintoma que comparta Juan y Maria?

@@ -1,0 +1,10 @@
+%Juego: Torres de hanoi
+%----------------------
+
+move(1,Ini,Fin,_) :- write('Mueve el disco superior de ('),
+	             write(Ini), write(') a ('), write(Fin), write(')'), nl.
+move(N,Ini,Fin,Aux) :- N>=1,
+	               M is N-1,
+		       move(M,Ini,Aux,Fin),
+		       move(1,Ini,Fin,_),
+		       move(M,Aux,Fin,Ini), !.
