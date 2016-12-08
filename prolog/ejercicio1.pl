@@ -2,7 +2,7 @@
 %   lista de palabras (una palabra por renglon), las
 %   ordene alfabeticamente (no usar predicados predefinidos
 %   para el ordenamiento) y que genere otro archivo con las
-%   palabras ordenadas. Deber· usar un nombre de archivo
+%   palabras ordenadas. Deber√° usar un nombre de archivo
 %   como parametro de entrada y otro nombre de archivo
 %   como parametro de salida.
 %%      ojo. verificar argumentos. Var nonvar, integer noninteger, etc...
@@ -10,7 +10,7 @@
 
 ordena(X,_) :- var(X), write('\nError, debes colocar el nombre del archivo sin ordenar\nEjemplo: ''sinOrdenar.txt'''), !.
 ordena(_,Y) :- var(Y), write('\nError, debes teclear el nombre del archivo destino\nEjemplo: ''ordenado.txt'''), !.
-ordena(X,Y) :- muestra(X,L), quicksort(L,Lo), crearArchivin(Y,Lo), writeln('\nTodo saliÛ bien.').
+ordena(X,Y) :- muestra(X,L), quicksrt(L,Lo), crearArchivin(Y,Lo), writeln('\nTodo sali√≥ bien.').
 %Cosas del manejo de archivos.
 %
 %convertir el archivo a lista
@@ -46,25 +46,12 @@ concatena([], ListaResultante,ListaResultante).
 concatena([_|Lista1Resto],Lista2, [_|ListaResultanteResto]) :- concatena(Lista1Resto,Lista2,ListaResultanteResto).
 
 %Ordenamiento quicksort
-quicksort([],[]).
-quicksort([Primero|Resto],Ordenado) :- partirListaEnDos(Resto,Primero,Izquierdo,Derecho),
-	                            quicksort(Izquierdo,Izq),
-				    quicksort(Derecho,Der),
+quicksrt([],[]).
+quicksrt([Primero|Resto],Ordenado) :- partirListaEnDos(Resto,Primero,Izquierdo,Derecho),
+	                            quicksrt(Izquierdo,Izq),
+				    quicksrt(Derecho,Der),
 				    append(Izq,[Primero|Der],Ordenado).
 
 %recorrer la lista ordenada.
 imprimir([]).
 imprimir([H|T]):- write(H),write('\n'), imprimir(T).
-
-
-
-
-
-
-
-
-
-
-
-
-
